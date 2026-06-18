@@ -1,7 +1,7 @@
 <?php
 /**
  * JaspuraHub Theme Functions
- * Version 2.0.0
+ * Version 2.1.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -38,8 +38,17 @@ add_action( 'after_setup_theme', 'jaspurahub_setup' );
 
 // Enqueue styles and scripts
 function jaspurahub_enqueue_assets() {
-    wp_enqueue_style( 'jaspurahub-style', get_stylesheet_uri(), array(), '2.0.0' );
-    wp_enqueue_script( 'jaspurahub-main', get_template_directory_uri() . '/assets/js/main.js', array(), '2.0.0', true );
+    // Main stylesheet
+    wp_enqueue_style( 'jaspurahub-style', get_stylesheet_uri(), array(), '2.1.0' );
+    
+    // Font Awesome Icons
+    wp_enqueue_style( 'font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css', array(), '6.5.1' );
+    
+    // Google Fonts
+    wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;500;600;700&display=swap', array(), '1.0' );
+    
+    // Main JavaScript
+    wp_enqueue_script( 'jaspurahub-main', get_template_directory_uri() . '/assets/js/main.js', array(), '2.1.0', true );
 }
 add_action( 'wp_enqueue_scripts', 'jaspurahub_enqueue_assets' );
 
